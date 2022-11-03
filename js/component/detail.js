@@ -6,12 +6,13 @@ const getProductDetail = () =>{
     console.log(urlParams.get("id"));
 
     axios({
-        url: `https://shop.cyberlearn.vn/api/Product/getbyid?id=${productId}`,
+        url:`https://shop.cyberlearn.vn/api/Product/getbyid?id=${productId}`,
         method: 'GET'
     })
 
     .then((res) => {
         product = res.data.content;
+        console.log(product);
         renderDetail();
 
     })
